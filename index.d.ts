@@ -1,7 +1,11 @@
 
-interface sauce {
+interface Sauce {
 	(file: string | Buffer | ReadableStream, params?: object): Promise<object>
 	dbmask: number | Array<number>
 }
 
-export default function Sauce(api_key: string, rps?: number): sauce
+interface NodeSauce {
+	new (api_key: string, rps?: number): Sauce
+}
+
+export default NodeSauce
