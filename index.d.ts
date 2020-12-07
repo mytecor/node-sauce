@@ -4,8 +4,9 @@ interface Sauce {
 	dbmask: number | Array<number>
 }
 
-interface NodeSauce {
+const NodeSauce: {
 	new (api_key: string, rps?: number): Sauce
+	prototype: Sauce
 }
 
 export default NodeSauce
