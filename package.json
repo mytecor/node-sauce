@@ -1,0 +1,13 @@
+{
+  "name": "node-sauce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vlad Afonin <midnightcoder@ya.ru>",
+  "description": "SauceNao api wrapper that is able to circumvent the restrictions",
+  "license": "MIT",
+  "dependencies": {
+    "multi-part-lite": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "sweet-limiter": "^1.0.1"
+  }
+}
