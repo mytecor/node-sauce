@@ -12,7 +12,7 @@ node-fetch@^2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
-sweet-limiter@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/sweet-limiter/-/sweet-limiter-1.0.1.tgz#3bc58bb629715548681366ae3a25a35c96fcf601"
-  integrity sha512-BS27BzRAk1wN8Q422AB2gqJW8OQ4+Myfdc+kDcITmall8GfpMfd+iraYO4Ji0tZi46+zgeTpAMrViCZHzL1LIw==
+sweet-limiter@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/sweet-limiter/-/sweet-limiter-2.0.0.tgz#3a7e328a10196f678e5074a28b2704429658b14c"
+  integrity sha512-joqWfVuJPGceAyGzU32w16rLwvGJ0hyaJ4rqkZ0iYevxtcXKI5sIlzHzcwcOcJv/ne68tkXS1PpRHctn0RMNtQ==

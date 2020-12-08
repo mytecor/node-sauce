@@ -1,6 +1,6 @@
 {
   "name": "node-sauce",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Vlad Afonin <midnightcoder@ya.ru>",
   "description": "SauceNao api wrapper that is able to circumvent the restrictions",
@@ -8,6 +8,17 @@
   "dependencies": {
     "multi-part-lite": "^1.0.0",
     "node-fetch": "^2.6.1",
-    "sweet-limiter": "^1.0.1"
-  }
+    "sweet-limiter": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midnightcoder-pro/node-sauce"
+  },
+  "keywords": [
+    "saucenao",
+    "api",
+    "client",
+    "image search",
+    "anime"
+  ]
 }

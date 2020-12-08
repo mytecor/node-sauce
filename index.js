@@ -10,7 +10,7 @@ module.exports = function Sauce(api_key, rps) {
 
 	async function sauce(file, params) {
 		// wait until our chance comes
-		await limiter()
+		await limiter.next()
 
 		let config
 		let req = {
