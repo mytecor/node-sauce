@@ -1,18 +1,18 @@
 {
   "name": "node-sauce",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
-  "author": "Vlad Afonin <midnightcoder@ya.ru>",
+  "author": "Vlad Afonin <mytecor@ya.ru>",
   "description": "SauceNao api wrapper that is able to circumvent the restrictions",
   "license": "MIT",
   "dependencies": {
     "multi-part-lite": "^1.0.0",
     "node-fetch": "^2.6.1",
-    "sweet-limiter": "^2.0.0"
+    "sweet-limiter": "^2.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/midnightcoder-pro/node-sauce"
+    "url": "git+https://github.com/mytecor/node-sauce"
   },
   "keywords": [
     "saucenao",
