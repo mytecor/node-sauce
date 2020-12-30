@@ -4,8 +4,22 @@ let Limiter = require('sweet-limiter')
 let fetch = require('node-fetch')
 let qs = require('querystring')
 
+
+// getting a fresh list of indexes once
+async function dbindexes() {
+	let res = await fetch('https://saucenao.com/tools/examples/api/index_details.txt').then(res => res.text())
+
+	let db = []
+	for(let [_, mask, index] of res.matchAll(/(0x\d+).*#(\d+)/g))
+		db[index] = Number.parseInt(mask, 16)
+
+	dbindexes = () => db
+	return db
+}
+
+
 module.exports = function Sauce(api_key, rps) {
-	let dbmask = 32 // pixiv
+	let dbmask
 	let limiter = new Limiter(rps || 6 / 30) // default rate limit
 
 	async function sauce(file, params) {
@@ -16,9 +30,13 @@ module.exports = function Sauce(api_key, rps) {
 		let req = {
 			api_key,
 			dbmask: await dbmask,
+			numres: sauce.numres,
 			...params,
 			output_type: 2
 		}
+
+		for(let k in req)
+			req[k] || delete req[k]
 
 		if(typeof file == 'object') {
 			let fd = (new FormData).append('file', file)
@@ -34,21 +52,9 @@ module.exports = function Sauce(api_key, rps) {
 		return (results || []).map(({data, header}) => Object.assign(data, header))
 	}
 
-	// getting a fresh list of indexes once
-	async function dbindexes() {
-		let res = await fetch('https://saucenao.com/tools/examples/api/index_details.txt').then(res => res.text())
-
-		let db = []
-		for(let [_, mask, index] of res.matchAll(/(0x\d+).*#(\d+)/g))
-			db[index] = Number.parseInt(mask, 16)
-
-		dbindexes = () => db
-		return db
-	}
-
 	Object.defineProperty(sauce, 'dbmask', {
 		set(mask) {
-			if(typeof indexes == 'number') return dbmask = mask
+			if(typeof mask == 'number') return dbmask = mask
 
 			dbmask = (async () => {
 				let indexes = await dbindexes()

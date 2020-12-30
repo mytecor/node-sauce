@@ -1,7 +1,8 @@
 
 interface Sauce {
 	(file: string | Buffer | ReadableStream, params?: object): Promise<object>
-	dbmask: number | Array<number>
+	dbmask?: number | Array<number>
+	numres?: number
 }
 
 declare const NodeSauce: {
