@@ -1,6 +1,6 @@
 {
   "name": "node-sauce",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "author": "Vlad Afonin <mytecor@ya.ru>",
   "description": "SauceNao api wrapper that is able to circumvent the restrictions",
